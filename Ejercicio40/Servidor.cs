@@ -29,6 +29,7 @@ namespace Ejercicio40
         public TimeSpan? finAtencion { get; set; }
         public TimeSpan? tiempoAtencion { get; set; }
         public TimeSpan? inicioOcio { get; set; }
+        public TimeSpan? ocioTotal { get; set; }
         public Double media { get; set; }
         public Double desv { get; set; }
     }

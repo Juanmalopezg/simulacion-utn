@@ -50,20 +50,18 @@ namespace Ejercicio40
             indiceEvento = 0;
 
             //Arranco SIM
-            for (int i=0;i<6;i++) {
-
-
-                switch (indiceEvento)
+            for (int i=0;i<20;i++) {
+             switch (indiceEvento)
                 {
                     case 0:
                         {
                             c_proxLlegada = TimeSpan.FromMinutes(proxEventoNormal(c_media, c_desv, rnd));
-                            
-                            //gvSimulacion.Rows.Add(reloj, evento, null, c_proxLlegada, null,
-                            //    insumos.estado, null, null, null, insumos.cola,
-                            //    telefono.estado, null, null,
-                            //    presupuesto.estado, null, null, null, presupuesto.cola,
-                            //    servTecnico.estado, null, null, null, servTecnico.cola);
+                            insumos.inicioOcio = reloj;
+                            insumos.ocioTotal = reloj;
+                            presupuesto.inicioOcio = reloj;
+                            presupuesto.ocioTotal = reloj;
+                            servTecnico.inicioOcio = reloj;
+                            servTecnico.ocioTotal = reloj;
                             break;
                         }
   
@@ -81,9 +79,15 @@ namespace Ejercicio40
                             atencion = presupuesto.nombre;
                             if (presupuesto.estado=="Libre" && presupuesto.cola.Equals(0))
                             {
-                                presupuesto.estado = "Ocupado";
-                                presupuesto.finAtencion = reloj + TimeSpan.FromMinutes(proxEventoNormal(presupuesto.media, presupuesto.desv, rnd));
 
+                                if (presupuesto.inicioOcio != null)
+                                {
+                                    presupuesto.ocioTotal += reloj - presupuesto.inicioOcio;
+                                    presupuesto.inicioOcio = null;
+                                }
+                                presupuesto.estado = "Ocupado";
+                                presupuesto.tiempoAtencion = TimeSpan.FromMinutes(proxEventoNormal(presupuesto.media, presupuesto.desv, rnd));
+                                presupuesto.finAtencion = reloj + presupuesto.tiempoAtencion;
                             }
                             else { presupuesto.cola++; }
                         }
@@ -91,9 +95,14 @@ namespace Ejercicio40
                             atencion = insumos.nombre;
                             if (insumos.estado == "Libre" && insumos.cola.Equals(0))
                             {
+                                if (insumos.inicioOcio != null)
+                                {
+                                    insumos.ocioTotal += reloj - insumos.inicioOcio;
+                                    insumos.inicioOcio = null;
+                                }
                                 insumos.estado = "Ocupado";
-                                insumos.finAtencion = reloj + TimeSpan.FromMinutes(proxEventoNormal(insumos.media, insumos.desv, rnd));
-
+                                insumos.tiempoAtencion = TimeSpan.FromMinutes(proxEventoNormal(insumos.media, insumos.desv, rnd));
+                                insumos.finAtencion = reloj + insumos.tiempoAtencion;
 
                             }
                             else { insumos.cola++; }
@@ -102,13 +111,81 @@ namespace Ejercicio40
                             atencion = servTecnico.nombre;
                             if (servTecnico.estado == "Libre" && servTecnico.cola.Equals(0))
                             {
+                                if (servTecnico.inicioOcio != null)
+                                {
+                                    servTecnico.ocioTotal += reloj - servTecnico.inicioOcio;
+                                    servTecnico.inicioOcio = null;
+                                }
                                 servTecnico.estado = "Ocupado";
-                                servTecnico.finAtencion = reloj + TimeSpan.FromMinutes(proxEventoNormal(servTecnico.media, servTecnico.desv, rnd));
+                                servTecnico.tiempoAtencion = TimeSpan.FromMinutes(proxEventoNormal(servTecnico.media, servTecnico.desv, rnd));
+                                servTecnico.finAtencion = reloj + servTecnico.tiempoAtencion;
                             }
                             else servTecnico.cola++;
                         }
                             break;
                     case 2:
+                        atencion = null;
+                        if (insumos.cola != 0)
+                        {
+                            if (insumos.inicioOcio != null) {
+                                insumos.ocioTotal = reloj - insumos.inicioOcio;
+                                insumos.inicioOcio = null;
+                            } 
+                            insumos.tiempoAtencion = TimeSpan.FromMinutes(proxEventoNormal(insumos.media,insumos.desv,rnd));
+                            insumos.finAtencion = reloj + insumos.tiempoAtencion;
+                            insumos.cola--;
+                        }
+                        else
+                        {
+                            insumos.tiempoAtencion = null;
+                            insumos.finAtencion = null;
+                            insumos.inicioOcio = reloj;
+                            insumos.estado = "Libre";
+                        }
+
+                        break;
+                    case 4:
+                        atencion = null;
+                        if (presupuesto.cola != 0)
+                        {
+                            if (presupuesto.inicioOcio != null)
+                            {
+                                presupuesto.ocioTotal = reloj - presupuesto.inicioOcio;
+                                presupuesto.inicioOcio = null;
+                            }
+                            presupuesto.tiempoAtencion = TimeSpan.FromMinutes(proxEventoNormal(presupuesto.media, presupuesto.desv, rnd));
+                            presupuesto.finAtencion = reloj + presupuesto.tiempoAtencion;
+                            presupuesto.cola--;
+                        }
+                        else
+                        {
+                            presupuesto.tiempoAtencion = null;
+                            presupuesto.finAtencion = null;
+                            presupuesto.inicioOcio = reloj;
+                            presupuesto.estado = "Libre";
+                        }
+                        break;
+
+                    case 5:
+                        atencion = null;
+                        if (servTecnico.cola != 0)
+                        {
+                            if (servTecnico.inicioOcio != null)
+                            {
+                                servTecnico.ocioTotal = reloj - servTecnico.inicioOcio;
+                                servTecnico.inicioOcio = null;
+                            }
+                            servTecnico.tiempoAtencion = TimeSpan.FromMinutes(proxEventoNormal(servTecnico.media, servTecnico.desv, rnd));
+                            servTecnico.finAtencion = reloj + servTecnico.tiempoAtencion;
+                            servTecnico.cola--;
+                        }
+                        else
+                        {
+                            servTecnico.tiempoAtencion = null;
+                            servTecnico.finAtencion = null;
+                            servTecnico.inicioOcio = reloj;
+                            servTecnico.estado = "Libre";
+                        }
                         break;
                 }
                 List<TimeSpan?> listaProximos = new List<TimeSpan?>();
@@ -143,6 +220,15 @@ namespace Ejercicio40
                     proximaAtencion(evento);
                 
             }
+            int i_colamax = gvSimulacion.Rows.Cast<DataGridViewRow>()
+                        .Max(r => Convert.ToInt32(r.Cells["I_cola"].Value));
+            int p_colamax = gvSimulacion.Rows.Cast<DataGridViewRow>()
+            .Max(r => Convert.ToInt32(r.Cells["P_cola"].Value));
+            int st_colamax = gvSimulacion.Rows.Cast<DataGridViewRow>()
+            .Max(r => Convert.ToInt32(r.Cells["S_cola"].Value));
+            Console.WriteLine("Insumos: " + i_colamax + " " + insumos.ocioTotal);
+            Console.WriteLine("Presupuestos: " + p_colamax + " " + presupuesto.ocioTotal);
+            Console.WriteLine("S. Tecnico: " + st_colamax+ " " +servTecnico.ocioTotal);
 
         }
 
