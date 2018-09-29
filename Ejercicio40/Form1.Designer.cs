@@ -31,29 +31,23 @@
             this.gvSimulacion = new System.Windows.Forms.DataGridView();
             this.Reloj = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Evento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.C_rand = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C_diffLlegadas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C_proxLlegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rndAtencion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Atencion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.I_Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.I_rnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.I_tiempoAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.I_finAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.I_inicioOcio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.I_cola = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.T_Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.T_proxima = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.T_rand = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.T_fin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.P_Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.P_rand = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.P_tiempoAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.P_finAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.P_inicioOcio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.P_cola = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.S_Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.S_rand = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.S_inicioAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.S_tiempoAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.S_finAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.S_inicioOcio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,29 +61,23 @@
             this.gvSimulacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Reloj,
             this.Evento,
-            this.C_rand,
             this.C_diffLlegadas,
             this.C_proxLlegada,
-            this.rndAtencion,
             this.Atencion,
             this.I_Estado,
-            this.I_rnd,
             this.I_tiempoAt,
             this.I_finAt,
             this.I_inicioOcio,
             this.I_cola,
+            this.T_Estado,
             this.T_proxima,
-            this.T_rand,
             this.T_fin,
             this.P_Estado,
-            this.P_rand,
             this.P_tiempoAt,
             this.P_finAt,
             this.P_inicioOcio,
             this.P_cola,
             this.S_Estado,
-            this.S_rand,
-            this.S_inicioAt,
             this.S_tiempoAt,
             this.S_finAt,
             this.S_inicioOcio,
@@ -112,12 +100,6 @@
             this.Evento.Name = "Evento";
             this.Evento.Width = 70;
             // 
-            // C_rand
-            // 
-            this.C_rand.HeaderText = "C_rand";
-            this.C_rand.Name = "C_rand";
-            this.C_rand.Width = 70;
-            // 
             // C_diffLlegadas
             // 
             this.C_diffLlegadas.HeaderText = "C_diffLlegadas";
@@ -130,12 +112,6 @@
             this.C_proxLlegada.Name = "C_proxLlegada";
             this.C_proxLlegada.Width = 70;
             // 
-            // rndAtencion
-            // 
-            this.rndAtencion.HeaderText = "rndAtencion";
-            this.rndAtencion.Name = "rndAtencion";
-            this.rndAtencion.Width = 70;
-            // 
             // Atencion
             // 
             this.Atencion.HeaderText = "Atencion";
@@ -147,12 +123,6 @@
             this.I_Estado.HeaderText = "I_Estado";
             this.I_Estado.Name = "I_Estado";
             this.I_Estado.Width = 70;
-            // 
-            // I_rnd
-            // 
-            this.I_rnd.HeaderText = "I_rnd";
-            this.I_rnd.Name = "I_rnd";
-            this.I_rnd.Width = 70;
             // 
             // I_tiempoAt
             // 
@@ -176,15 +146,15 @@
             this.I_cola.HeaderText = "I_cola";
             this.I_cola.Name = "I_cola";
             // 
+            // T_Estado
+            // 
+            this.T_Estado.HeaderText = "T_Estado";
+            this.T_Estado.Name = "T_Estado";
+            // 
             // T_proxima
             // 
             this.T_proxima.HeaderText = "T_proxima";
             this.T_proxima.Name = "T_proxima";
-            // 
-            // T_rand
-            // 
-            this.T_rand.HeaderText = "T_rand";
-            this.T_rand.Name = "T_rand";
             // 
             // T_fin
             // 
@@ -195,11 +165,6 @@
             // 
             this.P_Estado.HeaderText = "P_Estado";
             this.P_Estado.Name = "P_Estado";
-            // 
-            // P_rand
-            // 
-            this.P_rand.HeaderText = "P_rand";
-            this.P_rand.Name = "P_rand";
             // 
             // P_tiempoAt
             // 
@@ -225,16 +190,6 @@
             // 
             this.S_Estado.HeaderText = "S_Estado";
             this.S_Estado.Name = "S_Estado";
-            // 
-            // S_rand
-            // 
-            this.S_rand.HeaderText = "S_rand";
-            this.S_rand.Name = "S_rand";
-            // 
-            // S_inicioAt
-            // 
-            this.S_inicioAt.HeaderText = "S_inicioAt";
-            this.S_inicioAt.Name = "S_inicioAt";
             // 
             // S_tiempoAt
             // 
@@ -274,29 +229,23 @@
         private System.Windows.Forms.DataGridView gvSimulacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Reloj;
         private System.Windows.Forms.DataGridViewTextBoxColumn Evento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn C_rand;
         private System.Windows.Forms.DataGridViewTextBoxColumn C_diffLlegadas;
         private System.Windows.Forms.DataGridViewTextBoxColumn C_proxLlegada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rndAtencion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Atencion;
         private System.Windows.Forms.DataGridViewTextBoxColumn I_Estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn I_rnd;
         private System.Windows.Forms.DataGridViewTextBoxColumn I_tiempoAt;
         private System.Windows.Forms.DataGridViewTextBoxColumn I_finAt;
         private System.Windows.Forms.DataGridViewTextBoxColumn I_inicioOcio;
         private System.Windows.Forms.DataGridViewTextBoxColumn I_cola;
+        private System.Windows.Forms.DataGridViewTextBoxColumn T_Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn T_proxima;
-        private System.Windows.Forms.DataGridViewTextBoxColumn T_rand;
         private System.Windows.Forms.DataGridViewTextBoxColumn T_fin;
         private System.Windows.Forms.DataGridViewTextBoxColumn P_Estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn P_rand;
         private System.Windows.Forms.DataGridViewTextBoxColumn P_tiempoAt;
         private System.Windows.Forms.DataGridViewTextBoxColumn P_finAt;
         private System.Windows.Forms.DataGridViewTextBoxColumn P_inicioOcio;
         private System.Windows.Forms.DataGridViewTextBoxColumn P_cola;
         private System.Windows.Forms.DataGridViewTextBoxColumn S_Estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn S_rand;
-        private System.Windows.Forms.DataGridViewTextBoxColumn S_inicioAt;
         private System.Windows.Forms.DataGridViewTextBoxColumn S_tiempoAt;
         private System.Windows.Forms.DataGridViewTextBoxColumn S_finAt;
         private System.Windows.Forms.DataGridViewTextBoxColumn S_inicioOcio;

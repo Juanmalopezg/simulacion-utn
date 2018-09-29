@@ -11,19 +11,25 @@ namespace Ejercicio40
         //string lista_Estados;
 
 
-        public Servidor(string name)
+        public Servidor(string name,Double m, Double d,int i)
         {
             nombre = name;
             estado = "Libre";
+            eventoAsociado = "Fin Atencion " + name;
+            media = m;
+            desv = d;
+            indiceEvento = i;
         }
 
         public String nombre { get; set; }
         public String estado { get; set; }
+        public String eventoAsociado { get; set; }
         public int cola { get; set; }
-        public long? finAtencion { get; set; }
-        public long? tiempoAtencion { get; set; }
-        public long? inicioOcio { get; set; }
-        public long media { get; set; }
-        public long desv { get; set; }
+        public int indiceEvento { get; set; }
+        public TimeSpan? finAtencion { get; set; }
+        public TimeSpan? tiempoAtencion { get; set; }
+        public TimeSpan? inicioOcio { get; set; }
+        public Double media { get; set; }
+        public Double desv { get; set; }
     }
 }
