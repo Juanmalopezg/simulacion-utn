@@ -31,6 +31,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.gvSimulacion = new MetroFramework.Controls.MetroGrid();
             this.Reloj = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Evento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +61,13 @@
             this.S_finAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.S_inicioOcio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.S_cola = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grTS = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.grTP = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.grTI = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.gvSimulacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grTS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grTP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grTI)).BeginInit();
             this.SuspendLayout();
             // 
             // gvSimulacion
@@ -252,11 +264,83 @@
             this.S_cola.HeaderText = "S_cola";
             this.S_cola.Name = "S_cola";
             // 
+            // grTS
+            // 
+            this.grTS.BackColor = System.Drawing.Color.Transparent;
+            this.grTS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.grTS.BorderlineColor = System.Drawing.Color.Black;
+            chartArea1.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            this.grTS.ChartAreas.Add(chartArea1);
+            legend1.BackColor = System.Drawing.Color.Transparent;
+            legend1.ForeColor = System.Drawing.Color.White;
+            legend1.Name = "Legend1";
+            legend1.Title = "Servidor Serv. Técnico";
+            legend1.TitleBackColor = System.Drawing.Color.Transparent;
+            legend1.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            legend1.TitleForeColor = System.Drawing.Color.Cyan;
+            this.grTS.Legends.Add(legend1);
+            this.grTS.Location = new System.Drawing.Point(1052, 28);
+            this.grTS.Name = "grTS";
+            this.grTS.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            this.grTS.Size = new System.Drawing.Size(236, 136);
+            this.grTS.TabIndex = 3;
+            this.grTS.Text = "chart2";
+            // 
+            // grTP
+            // 
+            this.grTP.BackColor = System.Drawing.Color.Transparent;
+            this.grTP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.grTP.BorderlineColor = System.Drawing.Color.Black;
+            chartArea2.BackColor = System.Drawing.Color.Transparent;
+            chartArea2.Name = "ChartArea1";
+            this.grTP.ChartAreas.Add(chartArea2);
+            legend2.BackColor = System.Drawing.Color.Transparent;
+            legend2.ForeColor = System.Drawing.Color.White;
+            legend2.Name = "Legend1";
+            legend2.Title = "Servidor Presupuesto";
+            legend2.TitleBackColor = System.Drawing.Color.Transparent;
+            legend2.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            legend2.TitleForeColor = System.Drawing.Color.Cyan;
+            this.grTP.Legends.Add(legend2);
+            this.grTP.Location = new System.Drawing.Point(810, 28);
+            this.grTP.Name = "grTP";
+            this.grTP.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            this.grTP.Size = new System.Drawing.Size(236, 136);
+            this.grTP.TabIndex = 4;
+            this.grTP.Text = "grTP";
+            // 
+            // grTI
+            // 
+            this.grTI.BackColor = System.Drawing.Color.Transparent;
+            this.grTI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.grTI.BorderlineColor = System.Drawing.Color.Black;
+            chartArea3.BackColor = System.Drawing.Color.Transparent;
+            chartArea3.Name = "ChartArea1";
+            this.grTI.ChartAreas.Add(chartArea3);
+            legend3.BackColor = System.Drawing.Color.Transparent;
+            legend3.ForeColor = System.Drawing.Color.White;
+            legend3.Name = "Legend1";
+            legend3.Title = "Servidor Insumos";
+            legend3.TitleBackColor = System.Drawing.Color.Transparent;
+            legend3.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            legend3.TitleForeColor = System.Drawing.Color.Cyan;
+            this.grTI.Legends.Add(legend3);
+            this.grTI.Location = new System.Drawing.Point(579, 28);
+            this.grTI.Name = "grTI";
+            this.grTI.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            this.grTI.Size = new System.Drawing.Size(236, 136);
+            this.grTI.TabIndex = 5;
+            this.grTI.Text = "grTI";
+            // 
             // Sim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 600);
+            this.Controls.Add(this.grTI);
+            this.Controls.Add(this.grTP);
+            this.Controls.Add(this.grTS);
             this.Controls.Add(this.gvSimulacion);
             this.Name = "Sim";
             this.Resizable = false;
@@ -265,6 +349,9 @@
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.gvSimulacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grTS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grTP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grTI)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -294,6 +381,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn S_inicioOcio;
         private System.Windows.Forms.DataGridViewTextBoxColumn S_cola;
         private MetroFramework.Controls.MetroGrid gvSimulacion;
+        private System.Windows.Forms.DataVisualization.Charting.Chart grTS;
+        private System.Windows.Forms.DataVisualization.Charting.Chart grTP;
+        private System.Windows.Forms.DataVisualization.Charting.Chart grTI;
     }
 }
 

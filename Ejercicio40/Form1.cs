@@ -18,6 +18,9 @@ namespace Ejercicio40
         //para testear
         Stopwatch sw = new Stopwatch();
 
+        //
+        int iteraciones = 500;
+
 
         //Inicio Columnas
         // TimeSpan? reloj;
@@ -66,7 +69,7 @@ namespace Ejercicio40
             indiceEvento = 0;
 
             //Arranco SIM
-            for (int i=0;i<10000;i++)
+            for (int i=0;i<iteraciones; i++)
             {
                 switch (indiceEvento)
                 {
@@ -269,7 +272,7 @@ namespace Ejercicio40
 
                 sw.Stop();
 
-                List<Servidor> listServidores = new List<Servidor>();
+                 List<Servidor> listServidores = new List<Servidor>();
                     listServidores.Add(insumos);
                     listServidores.Add(telefono);
                     listServidores.Add(presupuesto);
@@ -297,7 +300,19 @@ namespace Ejercicio40
                 evento = proxNombreEvento(indiceEvento, listServidores);
 
                 //Actualizo la hora del proximo llamado
-                telefono.proximoEventoAsociado2 = actualizarProximoLLamado(reloj,telefono);               
+                telefono.proximoEventoAsociado2 = actualizarProximoLLamado(reloj,telefono);
+
+                if (i.Equals(iteraciones-1))
+                {
+                    foreach(Servidor s in listServidores)
+                    {
+                        if (s.inicioOcio != null)
+                        {
+                            s.ocioTotal += reloj - s.inicioOcio;
+                        }
+                    }
+                    
+                }             
             }
 
             int i_colamax = gvSimulacion.Rows.Cast<DataGridViewRow>()
@@ -307,6 +322,8 @@ namespace Ejercicio40
             int st_colamax = gvSimulacion.Rows.Cast<DataGridViewRow>()
             .Max(r => Convert.ToInt32(r.Cells["S_cola"].Value));
 
+            graficar(reloj, insumos.ocioTotal, presupuesto.ocioTotal, servTecnico.ocioTotal);
+
             //sw.Stop();
             Console.WriteLine("Elapsed={0}", sw.Elapsed);
 
@@ -314,6 +331,31 @@ namespace Ejercicio40
             Console.WriteLine("Presupuestos: " + p_colamax + " " + presupuesto.ocioTotal);
             Console.WriteLine("S. Tecnico: " + st_colamax+ " " +servTecnico.ocioTotal);
 
+        }
+
+        void graficar(TimeSpan? r, TimeSpan? ins, TimeSpan? pr, TimeSpan? sv)
+        {
+            grTI.Series.Clear();
+            grTP.Series.Clear();
+            grTS.Series.Clear();
+
+            grTI.Series.Add("Insumos");
+            grTP.Series.Add("Presupuesto");
+            grTS.Series.Add("Servicio tecnico");
+            grTI.Series["Insumos"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            grTP.Series["Presupuesto"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            grTS.Series["Servicio tecnico"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+
+
+            grTI.Series["Insumos"].Points.AddXY("Atención", reloj.Value.TotalMinutes- ins.Value.TotalMinutes);
+            grTI.Series["Insumos"].Points.AddXY("Ocio", ins.Value.TotalMinutes);
+
+            grTP.Series["Presupuesto"].Points.AddXY("Atención", reloj.Value.TotalMinutes - pr.Value.TotalMinutes);
+            grTP.Series["Presupuesto"].Points.AddXY("Ocio", pr.Value.TotalMinutes);
+
+            grTS.Series["Servicio tecnico"].Points.AddXY("Atención", reloj.Value.TotalMinutes - sv.Value.TotalMinutes);
+            grTS.Series["Servicio tecnico"].Points.AddXY("Ocio", sv.Value.TotalMinutes);
+            
         }
 
         public double proxEventoReloj(List<TimeSpan?> list)
