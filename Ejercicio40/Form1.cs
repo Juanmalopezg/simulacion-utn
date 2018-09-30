@@ -32,13 +32,17 @@ namespace Ejercicio40
         //randoms
         Double c_rand, a_rand, i_rand, t_rand, p_rand, s_rand;
 
+        private void btn_simular_Click(object sender, EventArgs e)
+        {
+            iniciarSim();
+        }
+
         //clientes
         TimeSpan? c_tiempoEntreLLeg, c_proxLlegada;
 
         public Sim()
         {
             InitializeComponent();
-            iniciarSim();
 
         }
 
@@ -46,6 +50,20 @@ namespace Ejercicio40
         {
             //p testear
             //sw.Start();
+
+            //Limpio grilla
+            gvSimulacion.Rows.Clear();
+            gvSimulacion.Columns[4].DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            gvSimulacion.Columns[5].DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            gvSimulacion.Columns[6].DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            gvSimulacion.Columns[7].DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            gvSimulacion.Columns[8].DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            gvSimulacion.Columns[9].DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            gvSimulacion.Columns[13].DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            gvSimulacion.Columns[14].DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            gvSimulacion.Columns[15].DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            gvSimulacion.Columns[16].DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            gvSimulacion.Columns[17].DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
 
             //creo los Servidores(nombre,media,desviación,indice de evento asociado)
             Servidor insumos = new Servidor("Insumos",3,1,2);
