@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
+using MetroFramework;
 
 
 namespace Ejercicio40
 {
 
-    public partial class Form1 : Form
+    public partial class Sim : MetroFramework.Forms.MetroForm
     {
         //para testear
         Stopwatch sw = new Stopwatch();
@@ -31,7 +32,7 @@ namespace Ejercicio40
         //clientes
         TimeSpan? c_tiempoEntreLLeg, c_proxLlegada;
 
-        public Form1()
+        public Sim()
         {
             InitializeComponent();
             iniciarSim();
@@ -65,7 +66,7 @@ namespace Ejercicio40
             indiceEvento = 0;
 
             //Arranco SIM
-            for (int i=0;i<20000;i++)
+            for (int i=0;i<10000;i++)
             {
                 switch (indiceEvento)
                 {
@@ -265,7 +266,7 @@ namespace Ejercicio40
                 if (telefono.finAtencion != null) listaProximos.Add(telefono.finAtencion);
                 if (presupuesto.finAtencion != null) listaProximos.Add(presupuesto.finAtencion);
                 if (servTecnico.finAtencion != null) listaProximos.Add(servTecnico.finAtencion);
-                //listaProximos.RemoveAll(x => x == null);
+
                 sw.Stop();
 
                 List<Servidor> listServidores = new List<Servidor>();
