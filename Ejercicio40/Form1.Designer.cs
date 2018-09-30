@@ -84,7 +84,7 @@
             this.S_cola});
             this.gvSimulacion.Location = new System.Drawing.Point(3, 51);
             this.gvSimulacion.Name = "gvSimulacion";
-            this.gvSimulacion.Size = new System.Drawing.Size(882, 320);
+            this.gvSimulacion.Size = new System.Drawing.Size(1300, 600);
             this.gvSimulacion.TabIndex = 0;
             this.gvSimulacion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -218,7 +218,9 @@
             this.ClientSize = new System.Drawing.Size(897, 383);
             this.Controls.Add(this.gvSimulacion);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.gvSimulacion)).EndInit();
             this.ResumeLayout(false);
 
