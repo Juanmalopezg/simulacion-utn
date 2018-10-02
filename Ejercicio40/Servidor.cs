@@ -11,7 +11,7 @@ namespace Ejercicio40
         //string lista_Estados;
 
 
-        public Servidor(string name,Double m, Double d,int i)
+        public Servidor(string name,Double m, Double d,int i,int p)
         {
             nombre = name;
             estado = "Libre";
@@ -19,12 +19,14 @@ namespace Ejercicio40
             media = m;
             desv = d;
             indiceEvento = i;
+            personalLibre = p;
         }
 
         public String nombre { get; set; }
         public String estado { get; set; }
         public String eventoAsociado { get; set; }
         public String eventoAsociado2 { get; set; }
+        public int personalLibre { get; set; }
         public int cola { get; set; }
         public int indiceEvento { get; set; }
         public int indiceEvento2 { get; set; }
