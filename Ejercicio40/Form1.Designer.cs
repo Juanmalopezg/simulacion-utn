@@ -58,6 +58,11 @@
             this.P_Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.P_tiempoAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.P_finAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.P2_tiempoAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.P2_finAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.P3_tiempoAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.P3_finAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.P_personalLibre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.P_inicioOcio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.P_cola = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.S_Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -149,6 +154,11 @@
             this.P_Estado,
             this.P_tiempoAt,
             this.P_finAt,
+            this.P2_tiempoAt,
+            this.P2_finAt,
+            this.P3_tiempoAt,
+            this.P3_finAt,
+            this.P_personalLibre,
             this.P_inicioOcio,
             this.P_cola,
             this.S_Estado,
@@ -294,6 +304,36 @@
             this.P_finAt.HeaderText = "P_finAt";
             this.P_finAt.Name = "P_finAt";
             this.P_finAt.Width = 75;
+            // 
+            // P2_tiempoAt
+            // 
+            this.P2_tiempoAt.HeaderText = "P2_tiempoAt";
+            this.P2_tiempoAt.Name = "P2_tiempoAt";
+            this.P2_tiempoAt.Width = 75;
+            // 
+            // P2_finAt
+            // 
+            this.P2_finAt.HeaderText = "P2_finAt";
+            this.P2_finAt.Name = "P2_finAt";
+            this.P2_finAt.Width = 75;
+            // 
+            // P3_tiempoAt
+            // 
+            this.P3_tiempoAt.HeaderText = "P3_tiempoAt";
+            this.P3_tiempoAt.Name = "P3_tiempoAt";
+            this.P3_tiempoAt.Width = 75;
+            // 
+            // P3_finAt
+            // 
+            this.P3_finAt.HeaderText = "P3_finAt";
+            this.P3_finAt.Name = "P3_finAt";
+            this.P3_finAt.Width = 75;
+            // 
+            // P_personalLibre
+            // 
+            this.P_personalLibre.HeaderText = "P_personalLibre";
+            this.P_personalLibre.Name = "P_personalLibre";
+            this.P_personalLibre.Width = 55;
             // 
             // P_inicioOcio
             // 
@@ -1217,6 +1257,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn P_Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn P_tiempoAt;
         private System.Windows.Forms.DataGridViewTextBoxColumn P_finAt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn P2_tiempoAt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn P2_finAt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn P3_tiempoAt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn P3_finAt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn P_personalLibre;
         private System.Windows.Forms.DataGridViewTextBoxColumn P_inicioOcio;
         private System.Windows.Forms.DataGridViewTextBoxColumn P_cola;
         private System.Windows.Forms.DataGridViewTextBoxColumn S_Estado;

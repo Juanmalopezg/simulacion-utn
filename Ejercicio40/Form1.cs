@@ -464,6 +464,10 @@ namespace Ejercicio40
             gvSimulacion.Columns[16].DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
             gvSimulacion.Columns[17].DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
             gvSimulacion.Columns[18].DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            gvSimulacion.Columns[19].DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            gvSimulacion.Columns[20].DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            gvSimulacion.Columns[21].DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            gvSimulacion.Columns[22].DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
 
 
             Double c_media = String.IsNullOrWhiteSpace(txMc.Text) || isChecked ?  5 : Double.Parse(txMc.Text);
@@ -479,7 +483,7 @@ namespace Ejercicio40
                 String.IsNullOrWhiteSpace(txDl.Text) || isChecked ? 0.5 : Double.Parse(txDl.Text.Replace('.', ',')), 3, 0);
             Servidor presupuesto = new Servidor("Presupuesto", 
                 String.IsNullOrWhiteSpace(txMp.Text) || isChecked ? 7 : Double.Parse(txMp.Text),
-                String.IsNullOrWhiteSpace(txDp.Text) || isChecked ? 2 : Double.Parse(txDp.Text.Replace('.', ',')),4, 0);
+                String.IsNullOrWhiteSpace(txDp.Text) || isChecked ? 2 : Double.Parse(txDp.Text.Replace('.', ',')),4, 3);
             Servidor servTecnico = new Servidor("Servicio Tecnico", 
                 String.IsNullOrWhiteSpace(txMs.Text) || isChecked ? 3 : Double.Parse(txMs.Text),
                 String.IsNullOrWhiteSpace(txDs.Text) || isChecked ? 1 : Double.Parse(txDs.Text.Replace('.', ',')), 5,2);
@@ -488,6 +492,9 @@ namespace Ejercicio40
             Random rnd = new Random();
 
             TimeSpan? servTecnico2_atencion = null;
+            TimeSpan? presupuesto2_atencion = null;
+            TimeSpan? presupuesto3_atencion = null;
+
             insumos.eventoAsociado2 = "Atiende Tel";
             insumos.indiceEvento2 = 6;
             telefono.tiempoConstanteAsociado = (String.IsNullOrWhiteSpace(txL.Text) || isChecked) ? TimeSpan.FromMinutes(5) : TimeSpan.FromMinutes(Double.Parse(txL.Text.Replace('.', ',')));
@@ -495,6 +502,10 @@ namespace Ejercicio40
             telefono.indiceEvento2 = 6;
             servTecnico.indiceEvento2 = servTecnico.indiceEvento;
             servTecnico.eventoAsociado2 = "Fin Atencion "+servTecnico.nombre;
+            presupuesto.indiceEvento2 = presupuesto.indiceEvento;
+            presupuesto.eventoAsociado2 = "Fin Atencion " + presupuesto.nombre;
+            presupuesto.indiceEvento3 = presupuesto.indiceEvento;
+            presupuesto.eventoAsociado3 = "Fin Atencion " + presupuesto.nombre;
             evento = "Inicio";
             atencion = null;
             indiceEvento = 0;
@@ -532,38 +543,47 @@ namespace Ejercicio40
                             atencion = presupuesto.nombre;
                             if (presupuesto.estado == "Libre")
                             {
-                                //Atiendo presupuesto solo si tengo personal disponible
-                                if (servTecnico.personalLibre > 0)
+                                if (presupuesto.inicioOcio != null)
                                 {
-                                    if (presupuesto.inicioOcio != null)
-                                    {
-                                        presupuesto.ocioTotal += reloj - presupuesto.inicioOcio;
-                                        presupuesto.inicioOcio = null;
-                                    }
-                                    presupuesto.estado = "Ocupado";
-                                    presupuesto.tiempoAtencion = TimeSpan.FromMinutes(proxEventoNormal(presupuesto.media, presupuesto.desv, rnd));
-                                    presupuesto.finAtencion = reloj + presupuesto.tiempoAtencion;
-                                    servTecnico.personalLibre--;
+                                    presupuesto.ocioTotal += reloj - presupuesto.inicioOcio;
+                                    presupuesto.inicioOcio = null;
                                 }
-                                else
+                                presupuesto.estado = "Ocupado";
+                                presupuesto.tiempoAtencion = TimeSpan.FromMinutes(proxEventoNormal(presupuesto.media, presupuesto.desv, rnd));
+                                presupuesto.finAtencion = reloj + presupuesto.tiempoAtencion;
+                                presupuesto.personalLibre--;
+                            }
+                                
+                         else
+                            {    //Asigno la atencion a alguno de los vendedores disponibles, sino lo sumo a la cola
+                                if (presupuesto.personalLibre>0)
                                 {
-                                    if (insumos.personalLibre > 0)
+                                    if (presupuesto.finAtencion == null)
                                     {
-                                        if (presupuesto.inicioOcio != null)
-                                        {
-                                            presupuesto.ocioTotal += reloj - presupuesto.inicioOcio;
-                                            presupuesto.inicioOcio = null;
-                                        }
                                         presupuesto.estado = "Ocupado";
                                         presupuesto.tiempoAtencion = TimeSpan.FromMinutes(proxEventoNormal(presupuesto.media, presupuesto.desv, rnd));
                                         presupuesto.finAtencion = reloj + presupuesto.tiempoAtencion;
-                                        servTecnico.personalLibre--;
+                                        presupuesto.personalLibre--;
                                     }
-                                    else presupuesto.cola++;
+                                    else if (presupuesto.proximoEventoAsociado2 == null)
+                                    {
+                                        presupuesto.estado = "Ocupado";
+                                        presupuesto2_atencion = TimeSpan.FromMinutes(proxEventoNormal(presupuesto.media, presupuesto.desv, rnd));
+                                        presupuesto.proximoEventoAsociado2 = reloj + presupuesto2_atencion;
+                                        presupuesto.personalLibre--;
+                                    }
+                                    else
+                                    {
+                                        presupuesto.estado = "Ocupado";
+                                        presupuesto3_atencion = TimeSpan.FromMinutes(proxEventoNormal(presupuesto.media, presupuesto.desv, rnd));
+                                        presupuesto.proximoEventoAsociado3 = reloj + presupuesto3_atencion;
+                                        presupuesto.personalLibre--;
+                                    }
                                 }
+                                else { presupuesto.cola++; }
 
                             }
-                            else { presupuesto.cola++; }
+                                
                         }
                         else if (0.55 < a_rand && a_rand < 0.95)
                         {
@@ -593,28 +613,20 @@ namespace Ejercicio40
                                     servTecnico.ocioTotal += reloj - servTecnico.inicioOcio;
                                     servTecnico.inicioOcio = null;
                                 }
-
-                                //Asigno la atencion a alguno de los técnicos disponibles
-                                switch (servTecnico.personalLibre)
-                                {
-                                    case 2:
-                                            servTecnico.estado = "Ocupado";
-                                            servTecnico.tiempoAtencion = TimeSpan.FromMinutes(proxEventoNormal(servTecnico.media, servTecnico.desv, rnd));
-                                            servTecnico.finAtencion = reloj + servTecnico.tiempoAtencion;
-                                        servTecnico.personalLibre--;
-                                        
-                                        break;
-                                    case 1:
-                                        servTecnico.estado = "Ocupado";
-                                        servTecnico2_atencion = TimeSpan.FromMinutes(proxEventoNormal(servTecnico.media, servTecnico.desv, rnd));
-                                        servTecnico.proximoEventoAsociado2 = reloj + servTecnico2_atencion;
-                                        servTecnico.personalLibre--;
-                                        break;
-                                }
+                                servTecnico.estado = "Ocupado";
+                                servTecnico.tiempoAtencion = TimeSpan.FromMinutes(proxEventoNormal(servTecnico.media, servTecnico.desv, rnd));
+                                servTecnico.finAtencion = reloj + servTecnico.tiempoAtencion;
+                                servTecnico.personalLibre--;
 
                             }
                             else {
-                                if (servTecnico.personalLibre.Equals(1))
+                                if (servTecnico.finAtencion == null)
+                                {
+                                    servTecnico.tiempoAtencion = TimeSpan.FromMinutes(proxEventoNormal(servTecnico.media, servTecnico.desv, rnd));
+                                    servTecnico.finAtencion = reloj + servTecnico.tiempoAtencion;
+                                    servTecnico.personalLibre--;
+                                }
+                                else if(servTecnico.proximoEventoAsociado2==null)
                                 {
                                     servTecnico.estado = "Ocupado";
                                     servTecnico2_atencion = TimeSpan.FromMinutes(proxEventoNormal(servTecnico.media, servTecnico.desv, rnd));
@@ -683,54 +695,64 @@ namespace Ejercicio40
                     //Fin de atencion de servidor presupuesto
                     case 4:
                         atencion = null;
-
-                        if (insumos.estado == "Libre" && insumos.personalLibre.Equals(0))
-                        {
-                            insumos.personalLibre++;
-                        }
-                        else servTecnico.personalLibre++;
-
                         if (presupuesto.cola != 0)
                         {
-                            //Atiendo presupuesto solo si tengo personal disponible
-                            if (servTecnico.personalLibre > 0)
+
+                            if (presupuesto.inicioOcio != null)
                             {
-                                if (presupuesto.inicioOcio != null)
-                                {
-                                    presupuesto.ocioTotal += reloj - presupuesto.inicioOcio;
-                                    presupuesto.inicioOcio = null;
-                                }
-                                presupuesto.estado = "Ocupado";
+                                presupuesto.ocioTotal = reloj - presupuesto.inicioOcio;
+                                presupuesto.inicioOcio = null;
                                 presupuesto.tiempoAtencion = TimeSpan.FromMinutes(proxEventoNormal(presupuesto.media, presupuesto.desv, rnd));
                                 presupuesto.finAtencion = reloj + presupuesto.tiempoAtencion;
-                                servTecnico.personalLibre--;
-                                presupuesto.cola--;
                             }
                             else
                             {
-                                if (insumos.personalLibre > 0)
+                                if(reloj.Equals(presupuesto.finAtencion))
                                 {
-                                    if (presupuesto.inicioOcio != null)
-                                    {
-                                        presupuesto.ocioTotal += reloj - presupuesto.inicioOcio;
-                                        presupuesto.inicioOcio = null;
-                                    }
-                                    presupuesto.estado = "Ocupado";
                                     presupuesto.tiempoAtencion = TimeSpan.FromMinutes(proxEventoNormal(presupuesto.media, presupuesto.desv, rnd));
                                     presupuesto.finAtencion = reloj + presupuesto.tiempoAtencion;
-                                    servTecnico.personalLibre--;
-                                    presupuesto.cola--;
                                 }
+                                else if (reloj.Equals(presupuesto.proximoEventoAsociado2))
+                                {
+                                    presupuesto2_atencion = TimeSpan.FromMinutes(proxEventoNormal(presupuesto.media, presupuesto.desv, rnd));
+                                    presupuesto.proximoEventoAsociado2 = reloj + presupuesto2_atencion;
+                                }
+                                    else
+                                    {
+                                        presupuesto3_atencion = TimeSpan.FromMinutes(proxEventoNormal(presupuesto.media, presupuesto.desv, rnd));
+                                        presupuesto.proximoEventoAsociado3 = reloj + presupuesto3_atencion;
+                                        break;
+                                    }
                             }
+                            presupuesto.cola--;
                         }
                         else
                         {
-                            presupuesto.tiempoAtencion = null;
-                            presupuesto.finAtencion = null;
-                            presupuesto.inicioOcio = reloj;
-                            presupuesto.estado = "Libre";
-                        }
-                        break;
+                            if (reloj.Equals(presupuesto.finAtencion))
+                            { presupuesto.tiempoAtencion = null;
+                                presupuesto.finAtencion = null;
+                                presupuesto.personalLibre++;
+                            }
+                            else if (reloj.Equals(presupuesto.proximoEventoAsociado2))
+                            {
+                                presupuesto2_atencion = null;
+                                presupuesto.proximoEventoAsociado2 = null;
+                                presupuesto.personalLibre++;
+                            }
+                            else {
+                                presupuesto3_atencion = null;
+                                presupuesto.proximoEventoAsociado3 = null;
+                                presupuesto.personalLibre++;
+                            }
+                            if (presupuesto.personalLibre.Equals(3))
+                            {
+                                presupuesto.inicioOcio = reloj;
+                                presupuesto.estado = "Libre";
+                            }      
+
+
+                }
+                break;
 
                     //Fin de atencion de servidor servicio tecnico
                     case 5:
@@ -747,22 +769,42 @@ namespace Ejercicio40
                             }
                             else
                             {
-                                servTecnico2_atencion = TimeSpan.FromMinutes(proxEventoNormal(servTecnico.media, servTecnico.desv, rnd));
-                                servTecnico.proximoEventoAsociado2 = reloj + servTecnico2_atencion;
+                                if (reloj.Equals(servTecnico.finAtencion))
+                                {
+                                    servTecnico.tiempoAtencion = TimeSpan.FromMinutes(proxEventoNormal(servTecnico.media, servTecnico.desv, rnd));
+                                    servTecnico.finAtencion = reloj + servTecnico.tiempoAtencion;
+                                    
+                                }
+                                else if (reloj.Equals(servTecnico.proximoEventoAsociado2))
+                                {
+                                    servTecnico.estado = "Ocupado";
+                                    servTecnico2_atencion = TimeSpan.FromMinutes(proxEventoNormal(servTecnico.media, servTecnico.desv, rnd));
+                                    servTecnico.proximoEventoAsociado2 = reloj + servTecnico2_atencion;
+                                    
+                                }
                             }
-                            
-
                             servTecnico.cola--;
                         }
                         else
                         {
-                            servTecnico.tiempoAtencion = null;
-                            servTecnico.finAtencion = null;
-                            servTecnico2_atencion = null;
-                            servTecnico.proximoEventoAsociado2 = null;
-                            servTecnico.inicioOcio = reloj;
-                            servTecnico.estado = "Libre";
-                            servTecnico.personalLibre++;
+                            if (reloj.Equals(servTecnico.finAtencion))
+                            {
+                                servTecnico.tiempoAtencion = null;
+                                servTecnico.finAtencion = null;
+                                servTecnico.personalLibre++;
+                            }
+                            else if (reloj.Equals(servTecnico.proximoEventoAsociado2))
+                            {
+                                servTecnico2_atencion = null;
+                                servTecnico.proximoEventoAsociado2 = null;
+                                servTecnico.personalLibre++;
+                            }
+                            if (servTecnico.personalLibre.Equals(2))
+                            {
+                                servTecnico.inicioOcio = reloj;
+                                servTecnico.estado = "Libre";
+                            }
+
                         }
                         break;
                     //Suena el telefono y el servidor de insumos esta libre
@@ -791,6 +833,8 @@ namespace Ejercicio40
                 if (telefono.proximoEventoAsociado2 != null) listaProximos.Add(telefono.proximoEventoAsociado2);
                 if (telefono.finAtencion != null) listaProximos.Add(telefono.finAtencion);
                 if (presupuesto.finAtencion != null) listaProximos.Add(presupuesto.finAtencion);
+                if (presupuesto.proximoEventoAsociado2 != null) listaProximos.Add(presupuesto.proximoEventoAsociado2);
+                if (presupuesto.proximoEventoAsociado3 != null) listaProximos.Add(presupuesto.proximoEventoAsociado3);
                 if (servTecnico.finAtencion != null) listaProximos.Add(servTecnico.finAtencion);
                 if (servTecnico.proximoEventoAsociado2 != null) listaProximos.Add(servTecnico.proximoEventoAsociado2);
                 
@@ -804,8 +848,8 @@ namespace Ejercicio40
                     gvSimulacion.Rows.Add(reloj, evento, c_tiempoEntreLLeg, c_proxLlegada, atencion,
                         insumos.estado, insumos.tiempoAtencion, insumos.finAtencion,insumos.personalLibre, insumos.inicioOcio, insumos.cola,
                         telefono.estado, telefono.tiempoAtencion, telefono.finAtencion,
-                        presupuesto.estado, presupuesto.tiempoAtencion, presupuesto.finAtencion, presupuesto.inicioOcio, presupuesto.cola,
-                        servTecnico.estado, servTecnico.tiempoAtencion, servTecnico.finAtencion,servTecnico2_atencion,servTecnico.proximoEventoAsociado2,servTecnico.personalLibre, servTecnico.inicioOcio, servTecnico.cola);
+                        presupuesto.estado, presupuesto.tiempoAtencion, presupuesto.finAtencion, presupuesto2_atencion, presupuesto.proximoEventoAsociado2, presupuesto3_atencion, presupuesto.proximoEventoAsociado3, presupuesto.personalLibre, presupuesto.inicioOcio, presupuesto.cola,
+                        servTecnico.estado, servTecnico.tiempoAtencion, servTecnico.finAtencion,servTecnico2_atencion, servTecnico.proximoEventoAsociado2,servTecnico.personalLibre, servTecnico.inicioOcio, servTecnico.cola);
 
                 //Se actualiza el reloj con el horario del proximo evento
                 reloj = TimeSpan.FromMinutes(proxEventoReloj(listaProximos));
@@ -911,6 +955,10 @@ namespace Ejercicio40
                     {
                         if (reloj.Equals(s.proximoEventoAsociado2)) return proxEvento = s.indiceEvento2;
                     }
+                    if (s.proximoEventoAsociado3 != null)
+                    {
+                        if (reloj.Equals(s.proximoEventoAsociado3)) return proxEvento = s.indiceEvento3;
+                    }
                     if (s.finAtencion != null)
                     {
                         if (s.finAtencion.Equals(reloj))
@@ -931,6 +979,7 @@ namespace Ejercicio40
             foreach (Servidor s in listServ)
             {
                 if (s.indiceEvento2.Equals(indice)) return proxNombreEvento = s.eventoAsociado2;
+                if (s.indiceEvento3.Equals(indice)) return proxNombreEvento = s.eventoAsociado3;
                 if (s.indiceEvento.Equals(indice)) return proxNombreEvento = s.eventoAsociado;
             }
             return proxNombreEvento;
