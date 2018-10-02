@@ -24,8 +24,10 @@ namespace Ejercicio40
         public int indiceEvento;
         Double pi = Math.PI;
         bool isChecked = true;
+        bool checkInicio = false;
         TimeSpan? c_tiempoEntreLLeg, c_proxLlegada;
         int validador;
+        Double validadorD;
 
         //Random de atención prara ver a donde va a ser derivado el cliente
         Double a_rand;
@@ -47,6 +49,7 @@ namespace Ejercicio40
         }
         private void rbDefault_CheckedChanged(object sender, EventArgs e)
         {
+
             isChecked = rbDefault.Checked;
 
             //Habilito/desabilito parámetros
@@ -58,17 +61,31 @@ namespace Ejercicio40
             txMi.Enabled = !isChecked;
             txMp.Enabled = !isChecked;
             txMs.Enabled = !isChecked;
+            txMl.Enabled = !isChecked;
+            txDl.Enabled = !isChecked;
             txL.Enabled = !isChecked;
         }
         private void rbDefault_Click(object sender, EventArgs e)
         {
-            if (rbDefault.Checked && !isChecked)
+            if (!rbDefault.Checked && !checkInicio)
+            {
                 rbDefault.Checked = false;
-            else
+                isChecked = false;
+                checkInicio = true;
+                return;
+
+            }
+            if (rbDefault.Checked && isChecked)
             {
                 rbDefault.Checked = true;
+                isChecked = true;
+            }
+            else
+            {
+                rbDefault.Checked = false;
                 isChecked = false;
-               
+
+
             }
         }
         private void txMinutosSim_Validating(object sender, CancelEventArgs e)
@@ -114,7 +131,7 @@ namespace Ejercicio40
                     {
                         e.Cancel = true;
                         txMc.Focus();
-                        errorProvider.SetError(txMc, "Ingrese un valor numerico para la cantidad expresada en minutos.");
+                        errorProvider.SetError(txMc, "Ingrese un valor numérico entero para la cantidad expresada en minutos.");
                         return;
                     }
                     if (validador <= 0)
@@ -143,7 +160,7 @@ namespace Ejercicio40
                     {
                         e.Cancel = true;
                         txMi.Focus();
-                        errorProvider.SetError(txMi, "Ingrese un valor numerico para la cantidad expresada en minutos.");
+                        errorProvider.SetError(txMi, "Ingrese un valor numérico entero para la cantidad expresada en minutos.");
                         return;
                     }
                     if (validador <= 0)
@@ -172,7 +189,7 @@ namespace Ejercicio40
                     {
                         e.Cancel = true;
                         txMp.Focus();
-                        errorProvider.SetError(txMp, "Ingrese un valor numerico para la cantidad expresada en minutos.");
+                        errorProvider.SetError(txMp, "Ingrese un valor numérico entero para la cantidad expresada en minutos.");
                         return;
                     }
                     if (validador <= 0)
@@ -201,7 +218,7 @@ namespace Ejercicio40
                     {
                         e.Cancel = true;
                         txMs.Focus();
-                        errorProvider.SetError(txMs, "Ingrese un valor numerico para la cantidad expresada en minutos.");
+                        errorProvider.SetError(txMs, "Ingrese un valor numerico entero para la cantidad expresada en minutos.");
                         return;
                     }
                     if (validador <= 0)
@@ -226,14 +243,14 @@ namespace Ejercicio40
             {
                 if (!string.IsNullOrWhiteSpace(txDc.Text))
                 {
-                    if (!int.TryParse(txDc.Text, out validador))
+                    if (!Double.TryParse(txDc.Text, out validadorD))
                     {
                         e.Cancel = true;
                         txDc.Focus();
                         errorProvider.SetError(txDc, "Ingrese un valor numerico para la cantidad expresada en minutos.");
                         return;
                     }
-                    if (validador < 0)
+                    if (validadorD < 0)
                     {
                         e.Cancel = true;
                         txDc.Focus();
@@ -255,14 +272,14 @@ namespace Ejercicio40
             {
                 if (!string.IsNullOrWhiteSpace(txDi.Text))
                 {
-                    if (!int.TryParse(txDi.Text, out validador))
+                    if (!Double.TryParse(txDi.Text, out validadorD))
                     {
                         e.Cancel = true;
                         txDi.Focus();
                         errorProvider.SetError(txDi, "Ingrese un valor numerico para la cantidad expresada en minutos.");
                         return;
                     }
-                    if (validador < 0)
+                    if (validadorD < 0)
                     {
                         e.Cancel = true;
                         txDi.Focus();
@@ -284,14 +301,14 @@ namespace Ejercicio40
             {
                 if (!string.IsNullOrWhiteSpace(txDp.Text))
                 {
-                    if (!int.TryParse(txDp.Text, out validador))
+                    if (!Double.TryParse(txDp.Text, out validadorD))
                     {
                         e.Cancel = true;
                         txDp.Focus();
                         errorProvider.SetError(txDp, "Ingrese un valor numerico para la cantidad expresada en minutos.");
                         return;
                     }
-                    if (validador < 0)
+                    if (validadorD < 0)
                     {
                         e.Cancel = true;
                         txDp.Focus();
@@ -313,14 +330,14 @@ namespace Ejercicio40
             {
                 if (!string.IsNullOrWhiteSpace(txDs.Text))
                 {
-                    if (!int.TryParse(txDs.Text, out validador))
+                    if (!Double.TryParse(txDs.Text, out validadorD))
                     {
                         e.Cancel = true;
                         txDs.Focus();
                         errorProvider.SetError(txDs, "Ingrese un valor numerico para la cantidad expresada en minutos.");
                         return;
                     }
-                    if (validador < 0)
+                    if (validadorD < 0)
                     {
                         e.Cancel = true;
                         txDs.Focus();
@@ -346,7 +363,7 @@ namespace Ejercicio40
                     {
                         e.Cancel = true;
                         txMl.Focus();
-                        errorProvider.SetError(txMl, "Ingrese un valor numerico para la cantidad expresada en minutos.");
+                        errorProvider.SetError(txMl, "Ingrese un valor numerico entero para la cantidad expresada en minutos.");
                         return;
                     }
                     if (validador <= 0)
@@ -371,14 +388,14 @@ namespace Ejercicio40
             {
                 if (!string.IsNullOrWhiteSpace(txDl.Text))
                 {
-                    if (!int.TryParse(txDl.Text, out validador))
+                    if (!Double.TryParse(txDl.Text, out validadorD))
                     {
                         e.Cancel = true;
                         txDl.Focus();
                         errorProvider.SetError(txDl, "Ingrese un valor numerico para la cantidad expresada en minutos.");
                         return;
                     }
-                    if (validador < 0)
+                    if (validadorD < 0)
                     {
                         e.Cancel = true;
                         txDl.Focus();
@@ -400,14 +417,14 @@ namespace Ejercicio40
             {
                 if (!string.IsNullOrWhiteSpace(txL.Text))
                 {
-                    if (!int.TryParse(txL.Text, out validador))
+                    if (!Double.TryParse(txL.Text, out validadorD))
                     {
                         e.Cancel = true;
                         txL.Focus();
                         errorProvider.SetError(txL, "Ingrese un valor numerico para la cantidad expresada en minutos.");
                         return;
                     }
-                    if (validador <= 0)
+                    if (validadorD <= 0)
                     {
                         e.Cancel = true;
                         txL.Focus();
@@ -448,25 +465,38 @@ namespace Ejercicio40
             gvSimulacion.Columns[17].DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
             gvSimulacion.Columns[18].DefaultCellStyle.BackColor = Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
 
+
+            Double c_media = String.IsNullOrWhiteSpace(txMc.Text) || isChecked ?  5 : Double.Parse(txMc.Text);
+            Double c_desv = String.IsNullOrWhiteSpace(txDc.Text) || isChecked ? 1: Double.Parse(txDc.Text.Replace('.', ','));
+
+
             //Creo los Servidores(nombre,media,desviación,indice de evento asociado,personal libre)
-            Servidor insumos = new Servidor("Insumos",3,1,2,1);
-            Servidor telefono = new Servidor("Telefono", 1,0.5,3,0);
-            Servidor presupuesto = new Servidor("Presupuesto",7,2,4,0);
-            Servidor servTecnico = new Servidor("Servicio Tecnico",3,1,5,2);
+            Servidor insumos = new Servidor("Insumos", 
+                String.IsNullOrWhiteSpace(txMi.Text) || isChecked  ? 3 : Double.Parse(txMi.Text),
+                String.IsNullOrWhiteSpace(txDi.Text) || isChecked  ? 1 : Double.Parse(txDi.Text.Replace('.',',')),2,1);
+            Servidor telefono = new Servidor("Telefono", 
+                String.IsNullOrWhiteSpace(txMl.Text) || isChecked ? 1 : Double.Parse(txMl.Text),
+                String.IsNullOrWhiteSpace(txDl.Text) || isChecked ? 0.5 : Double.Parse(txDl.Text.Replace('.', ',')), 3, 0);
+            Servidor presupuesto = new Servidor("Presupuesto", 
+                String.IsNullOrWhiteSpace(txMp.Text) || isChecked ? 7 : Double.Parse(txMp.Text),
+                String.IsNullOrWhiteSpace(txDp.Text) || isChecked ? 2 : Double.Parse(txDp.Text.Replace('.', ',')),4, 0);
+            Servidor servTecnico = new Servidor("Servicio Tecnico", 
+                String.IsNullOrWhiteSpace(txMs.Text) || isChecked ? 3 : Double.Parse(txMs.Text),
+                String.IsNullOrWhiteSpace(txDs.Text) || isChecked ? 1 : Double.Parse(txDs.Text.Replace('.', ',')), 5,2);
 
             //Auxiliares de simulación
             Random rnd = new Random();
-            Double c_media = 5;
-            Double c_desv = 1;
+
             TimeSpan? servTecnico2_atencion = null;
             insumos.eventoAsociado2 = "Atiende Tel";
             insumos.indiceEvento2 = 6;
-            telefono.tiempoConstanteAsociado = TimeSpan.FromMinutes(5);
+            telefono.tiempoConstanteAsociado = (String.IsNullOrWhiteSpace(txL.Text) || isChecked) ? TimeSpan.FromMinutes(5) : TimeSpan.FromMinutes(Double.Parse(txL.Text.Replace('.', ',')));
             telefono.proximoEventoAsociado2 = reloj + telefono.tiempoConstanteAsociado;
             telefono.indiceEvento2 = 6;
             servTecnico.indiceEvento2 = servTecnico.indiceEvento;
             servTecnico.eventoAsociado2 = "Fin Atencion "+servTecnico.nombre;
             evento = "Inicio";
+            atencion = null;
             indiceEvento = 0;
 
             //Arranco SIM
@@ -915,6 +945,12 @@ namespace Ejercicio40
 
             Double random = media + desv * rnd2;
             return random;
+        }
+
+        private void Sim_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = false;
+
         }
 
         TimeSpan? actualizarProximoLLamado(TimeSpan? r, Servidor t)
