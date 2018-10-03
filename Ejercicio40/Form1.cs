@@ -686,7 +686,6 @@ namespace Ejercicio40
                             insumos.estado = "Libre";
                             insumos.personalLibre++;
                         }
-                        telefono.proximoEventoAsociado2 += telefono.tiempoConstanteAsociado;
                         telefono.finAtencion = null;
                         telefono.tiempoAtencion = null;
                         telefono.estado = "Libre";
@@ -1004,7 +1003,7 @@ namespace Ejercicio40
 
         TimeSpan? actualizarProximoLLamado(TimeSpan? r, Servidor t)
         {
-            while (t.proximoEventoAsociado2 < reloj)
+            if (t.proximoEventoAsociado2 <= reloj)
             {
                 t.proximoEventoAsociado2 += t.tiempoConstanteAsociado;
             }
