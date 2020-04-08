@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Ejercicio40
 {
     public class Servidor
     {
-        //String nombre;
-        //string lista_Estados;
-
 
         public Servidor(string name,Double m, Double d,int i,int p)
         {

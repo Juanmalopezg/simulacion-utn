@@ -4,10 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
-using MetroFramework;
 
 
 namespace Ejercicio40
@@ -15,7 +13,7 @@ namespace Ejercicio40
 
     public partial class Sim : MetroFramework.Forms.MetroForm
     {
-        //Para testear
+        //Usado con fines de testing unitario
         Stopwatch sw = new Stopwatch();
 
         //Declaro variables globales auxiliares
@@ -29,9 +27,8 @@ namespace Ejercicio40
         int validador;
         Double validadorD;
 
-        //Random de atención prara ver a donde va a ser derivado el cliente
+        //Random de atención para ver a donde va a ser derivado el cliente
         Double a_rand;
-
 
         public Sim()
         {
@@ -88,6 +85,9 @@ namespace Ejercicio40
 
             }
         }
+
+        #region Validadores de parámetros
+
         private void txMinutosSim_Validating(object sender, CancelEventArgs e)
         {
             if (String.IsNullOrWhiteSpace(txMinutosSim.Text))
@@ -97,7 +97,7 @@ namespace Ejercicio40
                 errorProvider.SetError(txMinutosSim, "Ingrese cantidad de minutos a simular.");
                 return;
             }
-            if(!int.TryParse(txMinutosSim.Text, out validador))
+            if (!int.TryParse(txMinutosSim.Text, out validador))
             {
                 e.Cancel = true;
                 txMinutosSim.Focus();
@@ -105,7 +105,7 @@ namespace Ejercicio40
                 return;
 
             }
-            if (validador<=0||validador>87600)
+            if (validador <= 0 || validador > 87600)
             {
                 e.Cancel = true;
                 txMinutosSim.Focus();
@@ -113,14 +113,12 @@ namespace Ejercicio40
                 return;
 
             }
-             else
+            else
             {
                 e.Cancel = false;
-                errorProvider.SetError(txMinutosSim,null);
+                errorProvider.SetError(txMinutosSim, null);
             }
         }
-
-        #region Validadores de parámetros
         private void txMc_Validating(object sender, CancelEventArgs e)
         {
             if (!isChecked)
@@ -442,7 +440,7 @@ namespace Ejercicio40
         }
         #endregion
 
-
+        //Acá está toda la lógica de la simulación
         public void iniciarSim()
         {
             //Incia test
