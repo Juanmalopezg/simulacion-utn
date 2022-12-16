@@ -1,4 +1,4 @@
-﻿namespace Ejercicio40
+﻿namespace Attention_Simulator
 {
     partial class Sim
     {
@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sim));
             this.gvSimulacion = new MetroFramework.Controls.MetroGrid();
             this.Reloj = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -112,90 +112,58 @@
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.logoUtn = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.gvSimulacion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grTS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grTP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grTI)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logoUtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.gvSimulacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.grTS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.grTP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.grTI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.logoUtn)).BeginInit();
             this.SuspendLayout();
             // 
             // gvSimulacion
             // 
             this.gvSimulacion.AllowUserToResizeRows = false;
-            this.gvSimulacion.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.gvSimulacion.BackgroundColor = System.Drawing.Color.FromArgb(((int) (((byte) (17)))), ((int) (((byte) (17)))), ((int) (((byte) (17)))));
             this.gvSimulacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvSimulacion.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.gvSimulacion.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvSimulacion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (0)))), ((int) (((byte) (174)))), ((int) (((byte) (219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (17)))), ((int) (((byte) (17)))), ((int) (((byte) (17)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int) (((byte) (0)))), ((int) (((byte) (198)))), ((int) (((byte) (247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (17)))), ((int) (((byte) (17)))), ((int) (((byte) (17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvSimulacion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gvSimulacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvSimulacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Reloj,
-            this.Evento,
-            this.C_diffLlegadas,
-            this.C_proxLlegada,
-            this.Atencion,
-            this.I_Estado,
-            this.I_tiempoAt,
-            this.I_finAt,
-            this.I_personalLibre,
-            this.I_inicioOcio,
-            this.I_cola,
-            this.T_Estado,
-            this.T_proxima,
-            this.T_fin,
-            this.P_Estado,
-            this.P_tiempoAt,
-            this.P_finAt,
-            this.P2_tiempoAt,
-            this.P2_finAt,
-            this.P3_tiempoAt,
-            this.P3_finAt,
-            this.P_personalLibre,
-            this.P_inicioOcio,
-            this.P_cola,
-            this.S_Estado,
-            this.S_tiempoAt,
-            this.S_finAt,
-            this.S2_tiempoAt,
-            this.S2_finAt,
-            this.S_personalLibre,
-            this.S_inicioOcio,
-            this.S_cola});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvSimulacion.DefaultCellStyle = dataGridViewCellStyle6;
+            this.gvSimulacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.Reloj, this.Evento, this.C_diffLlegadas, this.C_proxLlegada, this.Atencion, this.I_Estado, this.I_tiempoAt, this.I_finAt, this.I_personalLibre, this.I_inicioOcio, this.I_cola, this.T_Estado, this.T_proxima, this.T_fin, this.P_Estado, this.P_tiempoAt, this.P_finAt, this.P2_tiempoAt, this.P2_finAt, this.P3_tiempoAt, this.P3_finAt, this.P_personalLibre, this.P_inicioOcio, this.P_cola, this.S_Estado, this.S_tiempoAt, this.S_finAt, this.S2_tiempoAt, this.S2_finAt, this.S_personalLibre, this.S_inicioOcio, this.S_cola});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (17)))), ((int) (((byte) (17)))), ((int) (((byte) (17)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (109)))), ((int) (((byte) (109)))), ((int) (((byte) (109)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int) (((byte) (0)))), ((int) (((byte) (198)))), ((int) (((byte) (247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (17)))), ((int) (((byte) (17)))), ((int) (((byte) (17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvSimulacion.DefaultCellStyle = dataGridViewCellStyle2;
             this.gvSimulacion.EnableHeadersVisualStyles = false;
             this.gvSimulacion.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.gvSimulacion.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.gvSimulacion.GridColor = System.Drawing.Color.FromArgb(((int) (((byte) (17)))), ((int) (((byte) (17)))), ((int) (((byte) (17)))));
             this.gvSimulacion.Location = new System.Drawing.Point(23, 170);
             this.gvSimulacion.Name = "gvSimulacion";
             this.gvSimulacion.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvSimulacion.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (0)))), ((int) (((byte) (174)))), ((int) (((byte) (219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (17)))), ((int) (((byte) (17)))), ((int) (((byte) (17)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int) (((byte) (0)))), ((int) (((byte) (198)))), ((int) (((byte) (247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (17)))), ((int) (((byte) (17)))), ((int) (((byte) (17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvSimulacion.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.gvSimulacion.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(229)))), ((int)(((byte)(252)))));
-            this.gvSimulacion.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int) (((byte) (179)))), ((int) (((byte) (229)))), ((int) (((byte) (252)))));
+            this.gvSimulacion.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.gvSimulacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvSimulacion.Size = new System.Drawing.Size(1330, 530);
+            this.gvSimulacion.Size = new System.Drawing.Size(1300, 530);
             this.gvSimulacion.Style = MetroFramework.MetroColorStyle.Blue;
             this.gvSimulacion.TabIndex = 0;
             this.gvSimulacion.TabStop = false;
@@ -400,23 +368,21 @@
             this.grTS.BackColor = System.Drawing.Color.Transparent;
             this.grTS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.grTS.BorderlineColor = System.Drawing.Color.Black;
-            chartArea4.BackColor = System.Drawing.Color.Transparent;
-            chartArea4.Name = "ChartArea1";
-            this.grTS.ChartAreas.Add(chartArea4);
-            legend4.BackColor = System.Drawing.Color.Transparent;
-            legend4.ForeColor = System.Drawing.Color.White;
-            legend4.Name = "Legend1";
-            legend4.Title = "Servidor Serv. Técnico";
-            legend4.TitleBackColor = System.Drawing.Color.Transparent;
-            legend4.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            legend4.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
-            this.grTS.Legends.Add(legend4);
+            chartArea1.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            this.grTS.ChartAreas.Add(chartArea1);
+            legend1.BackColor = System.Drawing.Color.Transparent;
+            legend1.ForeColor = System.Drawing.Color.White;
+            legend1.Name = "Legend1";
+            legend1.Title = "Servidor Serv. Técnico";
+            legend1.TitleBackColor = System.Drawing.Color.Transparent;
+            legend1.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            legend1.TitleForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (3)))), ((int) (((byte) (169)))), ((int) (((byte) (244)))));
+            this.grTS.Legends.Add(legend1);
             this.grTS.Location = new System.Drawing.Point(1017, 17);
             this.grTS.Name = "grTS";
             this.grTS.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            this.grTS.PaletteCustomColors = new System.Drawing.Color[] {
-        System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244))))),
-        System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))))};
+            this.grTS.PaletteCustomColors = new System.Drawing.Color[] {System.Drawing.Color.FromArgb(((int) (((byte) (3)))), ((int) (((byte) (169)))), ((int) (((byte) (244))))), System.Drawing.Color.FromArgb(((int) (((byte) (75)))), ((int) (((byte) (75)))), ((int) (((byte) (75)))))};
             this.grTS.Size = new System.Drawing.Size(242, 147);
             this.grTS.TabIndex = 16;
             this.grTS.TabStop = false;
@@ -427,23 +393,21 @@
             this.grTP.BackColor = System.Drawing.Color.Transparent;
             this.grTP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.grTP.BorderlineColor = System.Drawing.Color.Black;
-            chartArea5.BackColor = System.Drawing.Color.Transparent;
-            chartArea5.Name = "ChartArea1";
-            this.grTP.ChartAreas.Add(chartArea5);
-            legend5.BackColor = System.Drawing.Color.Transparent;
-            legend5.ForeColor = System.Drawing.Color.White;
-            legend5.Name = "Legend1";
-            legend5.Title = "Servidor Presupuesto";
-            legend5.TitleBackColor = System.Drawing.Color.Transparent;
-            legend5.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            legend5.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
-            this.grTP.Legends.Add(legend5);
+            chartArea2.BackColor = System.Drawing.Color.Transparent;
+            chartArea2.Name = "ChartArea1";
+            this.grTP.ChartAreas.Add(chartArea2);
+            legend2.BackColor = System.Drawing.Color.Transparent;
+            legend2.ForeColor = System.Drawing.Color.White;
+            legend2.Name = "Legend1";
+            legend2.Title = "Servidor Presupuesto";
+            legend2.TitleBackColor = System.Drawing.Color.Transparent;
+            legend2.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            legend2.TitleForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (3)))), ((int) (((byte) (169)))), ((int) (((byte) (244)))));
+            this.grTP.Legends.Add(legend2);
             this.grTP.Location = new System.Drawing.Point(777, 17);
             this.grTP.Name = "grTP";
             this.grTP.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            this.grTP.PaletteCustomColors = new System.Drawing.Color[] {
-        System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244))))),
-        System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))))};
+            this.grTP.PaletteCustomColors = new System.Drawing.Color[] {System.Drawing.Color.FromArgb(((int) (((byte) (3)))), ((int) (((byte) (169)))), ((int) (((byte) (244))))), System.Drawing.Color.FromArgb(((int) (((byte) (75)))), ((int) (((byte) (75)))), ((int) (((byte) (75)))))};
             this.grTP.Size = new System.Drawing.Size(242, 147);
             this.grTP.TabIndex = 0;
             this.grTP.TabStop = false;
@@ -454,23 +418,21 @@
             this.grTI.BackColor = System.Drawing.Color.Transparent;
             this.grTI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.grTI.BorderlineColor = System.Drawing.Color.Black;
-            chartArea6.BackColor = System.Drawing.Color.Transparent;
-            chartArea6.Name = "ChartArea1";
-            this.grTI.ChartAreas.Add(chartArea6);
-            legend6.BackColor = System.Drawing.Color.Transparent;
-            legend6.ForeColor = System.Drawing.Color.White;
-            legend6.Name = "Legend1";
-            legend6.Title = "Servidor Insumos";
-            legend6.TitleBackColor = System.Drawing.Color.Transparent;
-            legend6.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            legend6.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
-            this.grTI.Legends.Add(legend6);
+            chartArea3.BackColor = System.Drawing.Color.Transparent;
+            chartArea3.Name = "ChartArea1";
+            this.grTI.ChartAreas.Add(chartArea3);
+            legend3.BackColor = System.Drawing.Color.Transparent;
+            legend3.ForeColor = System.Drawing.Color.White;
+            legend3.Name = "Legend1";
+            legend3.Title = "Servidor Insumos";
+            legend3.TitleBackColor = System.Drawing.Color.Transparent;
+            legend3.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            legend3.TitleForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (3)))), ((int) (((byte) (169)))), ((int) (((byte) (244)))));
+            this.grTI.Legends.Add(legend3);
             this.grTI.Location = new System.Drawing.Point(529, 17);
             this.grTI.Name = "grTI";
             this.grTI.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            this.grTI.PaletteCustomColors = new System.Drawing.Color[] {
-        System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244))))),
-        System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))))};
+            this.grTI.PaletteCustomColors = new System.Drawing.Color[] {System.Drawing.Color.FromArgb(((int) (((byte) (3)))), ((int) (((byte) (169)))), ((int) (((byte) (244))))), System.Drawing.Color.FromArgb(((int) (((byte) (75)))), ((int) (((byte) (75)))), ((int) (((byte) (75)))))};
             this.grTI.Size = new System.Drawing.Size(242, 147);
             this.grTI.TabIndex = 0;
             this.grTI.TabStop = false;
@@ -518,7 +480,7 @@
             this.txMinutosSim.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.txMinutosSim.UseSelectable = true;
             this.txMinutosSim.WaterMark = "En minutos";
-            this.txMinutosSim.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txMinutosSim.WaterMarkColor = System.Drawing.Color.FromArgb(((int) (((byte) (109)))), ((int) (((byte) (109)))), ((int) (((byte) (109)))));
             this.txMinutosSim.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txMinutosSim.Validating += new System.ComponentModel.CancelEventHandler(this.txMinutosSim_Validating);
             // 
@@ -627,7 +589,7 @@
             this.txMc.TabIndex = 2;
             this.txMc.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.txMc.UseSelectable = true;
-            this.txMc.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txMc.WaterMarkColor = System.Drawing.Color.FromArgb(((int) (((byte) (109)))), ((int) (((byte) (109)))), ((int) (((byte) (109)))));
             this.txMc.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txMc.Validating += new System.ComponentModel.CancelEventHandler(this.txMc_Validating);
             // 
@@ -661,7 +623,7 @@
             this.metroTextBox2.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTextBox2.UseSelectable = true;
             this.metroTextBox2.WaterMark = "En minutos";
-            this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int) (((byte) (109)))), ((int) (((byte) (109)))), ((int) (((byte) (109)))));
             this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // metroTextBox3
@@ -694,7 +656,7 @@
             this.metroTextBox3.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTextBox3.UseSelectable = true;
             this.metroTextBox3.WaterMark = "En minutos";
-            this.metroTextBox3.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBox3.WaterMarkColor = System.Drawing.Color.FromArgb(((int) (((byte) (109)))), ((int) (((byte) (109)))), ((int) (((byte) (109)))));
             this.metroTextBox3.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // txMi
@@ -726,7 +688,7 @@
             this.txMi.TabIndex = 4;
             this.txMi.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.txMi.UseSelectable = true;
-            this.txMi.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txMi.WaterMarkColor = System.Drawing.Color.FromArgb(((int) (((byte) (109)))), ((int) (((byte) (109)))), ((int) (((byte) (109)))));
             this.txMi.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txMi.Validating += new System.ComponentModel.CancelEventHandler(this.txMi_Validating);
             // 
@@ -759,7 +721,7 @@
             this.txMs.TabIndex = 6;
             this.txMs.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.txMs.UseSelectable = true;
-            this.txMs.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txMs.WaterMarkColor = System.Drawing.Color.FromArgb(((int) (((byte) (109)))), ((int) (((byte) (109)))), ((int) (((byte) (109)))));
             this.txMs.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txMs.Validating += new System.ComponentModel.CancelEventHandler(this.txMs_Validating);
             // 
@@ -792,7 +754,7 @@
             this.txDs.TabIndex = 7;
             this.txDs.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.txDs.UseSelectable = true;
-            this.txDs.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txDs.WaterMarkColor = System.Drawing.Color.FromArgb(((int) (((byte) (109)))), ((int) (((byte) (109)))), ((int) (((byte) (109)))));
             this.txDs.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txDs.Validating += new System.ComponentModel.CancelEventHandler(this.txDs_Validating);
             // 
@@ -825,7 +787,7 @@
             this.txDi.TabIndex = 5;
             this.txDi.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.txDi.UseSelectable = true;
-            this.txDi.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txDi.WaterMarkColor = System.Drawing.Color.FromArgb(((int) (((byte) (109)))), ((int) (((byte) (109)))), ((int) (((byte) (109)))));
             this.txDi.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txDi.Validating += new System.ComponentModel.CancelEventHandler(this.txDi_Validating);
             // 
@@ -858,7 +820,7 @@
             this.txDc.TabIndex = 3;
             this.txDc.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.txDc.UseSelectable = true;
-            this.txDc.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txDc.WaterMarkColor = System.Drawing.Color.FromArgb(((int) (((byte) (109)))), ((int) (((byte) (109)))), ((int) (((byte) (109)))));
             this.txDc.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txDc.Validating += new System.ComponentModel.CancelEventHandler(this.txDc_Validating);
             // 
@@ -891,7 +853,7 @@
             this.txDl.TabIndex = 11;
             this.txDl.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.txDl.UseSelectable = true;
-            this.txDl.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txDl.WaterMarkColor = System.Drawing.Color.FromArgb(((int) (((byte) (109)))), ((int) (((byte) (109)))), ((int) (((byte) (109)))));
             this.txDl.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txDl.Validating += new System.ComponentModel.CancelEventHandler(this.txDl_Validating);
             // 
@@ -924,7 +886,7 @@
             this.txDp.TabIndex = 9;
             this.txDp.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.txDp.UseSelectable = true;
-            this.txDp.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txDp.WaterMarkColor = System.Drawing.Color.FromArgb(((int) (((byte) (109)))), ((int) (((byte) (109)))), ((int) (((byte) (109)))));
             this.txDp.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txDp.Validating += new System.ComponentModel.CancelEventHandler(this.txDp_Validating);
             // 
@@ -957,7 +919,7 @@
             this.txL.TabIndex = 12;
             this.txL.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.txL.UseSelectable = true;
-            this.txL.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txL.WaterMarkColor = System.Drawing.Color.FromArgb(((int) (((byte) (109)))), ((int) (((byte) (109)))), ((int) (((byte) (109)))));
             this.txL.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txL.Validating += new System.ComponentModel.CancelEventHandler(this.txL_Validating);
             // 
@@ -990,7 +952,7 @@
             this.txMl.TabIndex = 10;
             this.txMl.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.txMl.UseSelectable = true;
-            this.txMl.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txMl.WaterMarkColor = System.Drawing.Color.FromArgb(((int) (((byte) (109)))), ((int) (((byte) (109)))), ((int) (((byte) (109)))));
             this.txMl.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txMl.Validating += new System.ComponentModel.CancelEventHandler(this.txMl_Validating);
             // 
@@ -1023,7 +985,7 @@
             this.txMp.TabIndex = 8;
             this.txMp.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.txMp.UseSelectable = true;
-            this.txMp.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txMp.WaterMarkColor = System.Drawing.Color.FromArgb(((int) (((byte) (109)))), ((int) (((byte) (109)))), ((int) (((byte) (109)))));
             this.txMp.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txMp.Validating += new System.ComponentModel.CancelEventHandler(this.txMp_Validating);
             // 
@@ -1031,12 +993,12 @@
             // 
             this.rbDefault.AutoSize = true;
             this.rbDefault.Checked = true;
+            this.rbDefault.CheckState = System.Windows.Forms.CheckState.Checked;
             this.rbDefault.Location = new System.Drawing.Point(304, 68);
             this.rbDefault.Name = "rbDefault";
-            this.rbDefault.Size = new System.Drawing.Size(163, 15);
+            this.rbDefault.Size = new System.Drawing.Size(150, 15);
             this.rbDefault.TabIndex = 29;
-            this.rbDefault.TabStop = true;
-            this.rbDefault.Text = "Usar parámetros originales";
+            this.rbDefault.Text = "Usar valores por defecto";
             this.rbDefault.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.rbDefault.UseSelectable = true;
             this.rbDefault.CheckedChanged += new System.EventHandler(this.rbDefault_CheckedChanged);
@@ -1169,7 +1131,7 @@
             // 
             // logoUtn
             // 
-            this.logoUtn.Image = ((System.Drawing.Image)(resources.GetObject("logoUtn.Image")));
+            this.logoUtn.Image = ((System.Drawing.Image) (resources.GetObject("logoUtn.Image")));
             this.logoUtn.Location = new System.Drawing.Point(283, 21);
             this.logoUtn.Name = "logoUtn";
             this.logoUtn.Size = new System.Drawing.Size(30, 36);
@@ -1182,7 +1144,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.ClientSize = new System.Drawing.Size(1300, 600);
+            this.ClientSize = new System.Drawing.Size(1346, 728);
             this.Controls.Add(this.logoUtn);
             this.Controls.Add(this.metroLabel11);
             this.Controls.Add(this.metroLabel9);
@@ -1226,17 +1188,15 @@
             this.Resizable = false;
             this.Text = "Simulador de atenciones";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Sim_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.gvSimulacion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grTS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grTP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grTI)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logoUtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.gvSimulacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.grTS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.grTP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.grTI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.logoUtn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

@@ -7,8 +7,8 @@
     <ProjectGuid>{39F7D457-BD45-428C-BBC0-873D99D4C94F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ejercicio40</RootNamespace>
-    <AssemblyName>Ejercicio40</AssemblyName>
+    <RootNamespace>Attention_Simulator</RootNamespace>
+    <AssemblyName>Attention_Simulator</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
@@ -79,28 +79,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cliente.cs" />
-    <Compile Include="Simulador.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Simulador.Designer.cs">
-      <DependentUpon>Simulador.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Servidor.cs" />
-    <EmbeddedResource Include="Simulador.resx">
+    <Compile Include="src\Cliente.cs" />
+    <Compile Include="src\Program.cs" />
+    <Compile Include="src\Servidor.cs" />
+    <Compile Include="src\Simulador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Simulador.Designer.cs">
       <DependentUpon>Simulador.cs</DependentUpon>
-    </EmbeddedResource>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Simulador.resx">
+      <DependentUpon>Simulador.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />
