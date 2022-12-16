@@ -1,4 +1,4 @@
-﻿namespace Ejercicio40
+﻿namespace Attention_Simulator
 {
     internal class Cliente
     {

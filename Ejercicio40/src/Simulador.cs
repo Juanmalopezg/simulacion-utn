@@ -6,9 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using Ejercicio40;
 using MetroFramework.Forms;
 
-namespace Ejercicio40
+namespace Attention_Simulator
 {
     public partial class Sim : MetroForm
     {
@@ -36,7 +37,7 @@ namespace Ejercicio40
 
         private void btn_simular_Click(object sender, EventArgs e)
         {
-            if (ValidateChildren(ValidationConstraints.Enabled)) iniciarSim();
+            if (ValidateChildren(ValidationConstraints.Enabled)) StartSimulation();
         }
 
         private void rbDefault_CheckedChanged(object sender, EventArgs e)
@@ -80,7 +81,7 @@ namespace Ejercicio40
         }
 
         //Acá está toda la lógica de la simulación
-        public void iniciarSim()
+        public void StartSimulation()
         {
             //Incia test
             sw.Start();
@@ -88,23 +89,7 @@ namespace Ejercicio40
             var iteraciones = int.Parse(txMinutosSim.Text);
             reloj = TimeSpan.Parse("00:00:00");
 
-            //Limpio grilla y doy colores de columna
-            gvSimulacion.Rows.Clear();
-            gvSimulacion.Columns[5].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
-            gvSimulacion.Columns[6].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
-            gvSimulacion.Columns[7].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
-            gvSimulacion.Columns[8].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
-            gvSimulacion.Columns[9].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
-            gvSimulacion.Columns[10].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
-            gvSimulacion.Columns[14].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
-            gvSimulacion.Columns[15].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
-            gvSimulacion.Columns[16].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
-            gvSimulacion.Columns[17].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
-            gvSimulacion.Columns[18].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
-            gvSimulacion.Columns[19].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
-            gvSimulacion.Columns[20].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
-            gvSimulacion.Columns[21].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
-            gvSimulacion.Columns[22].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
+            prepareGrid();
 
 
             var c_media = string.IsNullOrWhiteSpace(txMc.Text) || isChecked ? 5 : double.Parse(txMc.Text);
@@ -584,6 +569,27 @@ namespace Ejercicio40
 
             sw.Stop();
             Console.WriteLine("Elapsed={0}", sw.Elapsed);
+        }
+
+        private void prepareGrid()
+        {
+            //Limpio grilla y doy colores de columna
+            gvSimulacion.Rows.Clear();
+            gvSimulacion.Columns[5].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
+            gvSimulacion.Columns[6].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
+            gvSimulacion.Columns[7].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
+            gvSimulacion.Columns[8].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
+            gvSimulacion.Columns[9].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
+            gvSimulacion.Columns[10].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
+            gvSimulacion.Columns[14].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
+            gvSimulacion.Columns[15].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
+            gvSimulacion.Columns[16].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
+            gvSimulacion.Columns[17].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
+            gvSimulacion.Columns[18].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
+            gvSimulacion.Columns[19].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
+            gvSimulacion.Columns[20].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
+            gvSimulacion.Columns[21].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
+            gvSimulacion.Columns[22].DefaultCellStyle.BackColor = Color.FromArgb(21, 21, (int) 21);
         }
 
         private void graficar(TimeSpan? r, TimeSpan? ins, TimeSpan? pr, TimeSpan? sv)

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simulador_EJ40", "Ejercicio40\Simulador_EJ40.csproj", "{39F7D457-BD45-428C-BBC0-873D99D4C94F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Attention_Simulator", "Ejercicio40\Attention_Simulator.csproj", "{39F7D457-BD45-428C-BBC0-873D99D4C94F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
