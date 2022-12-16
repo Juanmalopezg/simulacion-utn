@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Ejercicio40
+﻿namespace Ejercicio40
 {
-    class Cliente
+    internal class Cliente
     {
-        public String estado { get; set; }
-
+        public string estado { get; set; }
     }
-
-
 }
